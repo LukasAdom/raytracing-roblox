@@ -1,10 +1,12 @@
 
--- random variables
+
 local Workspace = game:GetService("Workspace")
-local px_size = 8
+
+--Parameters
+local px_size = 8 --pixel size
 local load_avatar = false
-local c3 = 0.045
-local c2 = 0.89
+local c3 = 0.045 --Used for in linear lerp(), don't really recommend changing anything here
+local c2 = 0.89 --Used for in linear lerp(), don't really recommend changing anything here
 
 -- setting up the pixel abd grid frame templates
 local pixel_frame_template = Instance.new("Frame")
@@ -22,7 +24,7 @@ grid_frame_template.Name = "GridLayout"
 
 local pixelGrid = {}
 
--- The entire reason why I chose to use CIELUV instead of RGB is so I could get more accurate color results when using :Lerp()
+-- The entire reason why I chose to use CIELUV instead of RGB is so I could get more accurate color results when using lerp()
 local LerpCIELUV do
 	
 	local clamp = math.clamp
@@ -121,7 +123,7 @@ end
 
 				if raycast.Material == Enum.Material.Glass then
 					
-					for i=0,10 do
+					for i=0,5 do
 					raycastParams.FilterType = Enum.RaycastFilterType.Exclude
 						local a = 2*math.pi*math.random()
 						local x = math.random()
@@ -136,7 +138,7 @@ end
 					end
 				end
 				if raycast.Instance:FindFirstChild("PointLight") ~= nil then -- this is only for any object that emits a pointlight
-					for i=0,15 do
+					for i=0,7 do
 						local intesity = 5
 						raycastParams.FilterType = Enum.RaycastFilterType.Exclude
 						local cf = raycast.Instance.CFrame
