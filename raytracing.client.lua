@@ -8,7 +8,7 @@ local load_avatar = false
 local c3 = 0.045 --Used for in linear lerp(), don't really recommend changing anything here
 local c2 = 0.89 --Used for in linear lerp(), don't really recommend changing anything here
 
--- setting up the pixel abd grid frame templates
+-- Setting up the pixel and grid frame templates
 local pixel_frame_template = Instance.new("Frame")
 pixel_frame_template.Size = UDim2.fromOffset(px_size, px_size)
 pixel_frame_template.BorderSizePixel = 0
@@ -101,7 +101,7 @@ end
 	
 
 	--[[ for each pixel it shoots a ray which if the material of the object that was hit by that same ray is glass,
-	then it will bounce of that material and return the color data of whatever it hits next]]
+	then it will bounce off that material and return the color data of whatever it hits next]]
 
 	for _, pixel in pairs(pixelGrid) do
 		local unitRay = workspace.CurrentCamera:ScreenPointToRay(pixel.AbsolutePosition.X, pixel.AbsolutePosition.Y)
